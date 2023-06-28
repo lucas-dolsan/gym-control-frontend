@@ -1,11 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import GymController from '../controllers/gymController';
 
 const GymPage = () => {
+  const [gyms, setGyms] = useState([]);
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
   const [country, setCountry] = useState('');
+
+  useEffect(() => {
+    loadGyms();
+  }, []);
+
+  const loadGyms = async () => {
+    try {
+      const fetchedGyms = await GymController.listGyms();
+      setGyms(fetchedGyms);
+    } catch (error) {
+      console.error('Failed to fetch gyms:', error);
+    }
+  };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -17,14 +31,31 @@ const GymPage = () => {
       country,
     };
 
-    console.log({ newGym });
-
     try {
       await GymController.createGym(newGym);
       console.log('Gym created successfully!');
+      clearForm();
+      loadGyms();
     } catch (error) {
       console.error('Failed to create gym:', error);
     }
+  };
+
+  const handleDeleteGym = async (gymId) => {
+    try {
+      await GymController.deleteGym(gymId);
+      console.log('Gym deleted successfully!');
+      loadGyms();
+    } catch (error) {
+      console.error('Failed to delete gym:', error);
+    }
+  };
+
+  const clearForm = () => {
+    setName('');
+    setAddress('');
+    setCity('');
+    setCountry('');
   };
 
   return (
@@ -49,6 +80,17 @@ const GymPage = () => {
         </div>
         <button type='submit'>Cadastrar</button>
       </form>
+
+      <h2>Lista de Academias</h2>
+      {gyms.map((gym) => (
+        <div key={gym.id}>
+          <p>Nome: {gym.name}</p>
+          <p>Endereço: {gym.address}</p>
+          <p>Cidade: {gym.city}</p>
+          <p>País: {gym.country}</p>
+          <button onClick={() => handleDeleteGym(gym.id)}>Excluir</button>
+        </div>
+      ))}
     </div>
   );
 };
