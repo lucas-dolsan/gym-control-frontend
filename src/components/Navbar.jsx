@@ -6,22 +6,25 @@ function Navbar() {
     <nav>
       <ul>
         <li>
-          <Link to='/'>Home</Link>
+          <Link to='/'>Início</Link>
         </li>
         <li>
-          <Link to='/gym'>Gym</Link>
+          <Link to='/gym'>Academia</Link>
         </li>
         <li>
-          <Link to='/professionals'>Professionals</Link>
+          <Link to='/professionals'>Profissionais</Link>
         </li>
         <li>
-          <Link to='/activities'>Activities</Link>
+          <Link to='/activities'>Atividades</Link>
         </li>
         <li>
-          <Link to='/equipment'>Equipment</Link>
+          <Link to='/equipment'>Equipamentos</Link>
         </li>
         <li>
-          <Link to='/students'>Students</Link>
+          <Link to='/students'>Estudantes</Link>
+        </li>
+        <li>
+          <Link to='/cashflows'>Fluxo de caixa</Link>
         </li>
       </ul>
     </nav>
