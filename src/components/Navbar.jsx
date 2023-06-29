@@ -1,29 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
     <nav>
       <ul>
         <li>
-          <a href='/'>Home</a>
+          <Link to='/'>Home</Link>
         </li>
         <li>
-          <a href='/users'>Users</a>
+          <Link to='/gym'>Gym</Link>
         </li>
         <li>
-          <a href='/gym'>Gym</a>
+          <Link to='/professionals'>Professionals</Link>
         </li>
         <li>
-          <a href='/professionals'>Professionals</a>
+          <Link to='/activities'>Activities</Link>
         </li>
         <li>
-          <a href='/activities'>Activities</a>
+          <Link to='/equipment'>Equipment</Link>
         </li>
         <li>
-          <a href='/equipment'>Equipment</a>
-        </li>
-        <li>
-          <a href='/students'>Students</a>
+          <Link to='/students'>Students</Link>
         </li>
       </ul>
     </nav>

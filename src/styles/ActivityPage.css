@@ -1,0 +1,74 @@
+/* ActivityPage.css */
+
+.activity-page {
+  padding: 20px;
+}
+
+.activity-page h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.activity-page form {
+  margin-bottom: 20px;
+}
+
+.activity-page label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.activity-page input[type='text'],
+.activity-page textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.activity-page button[type='submit'] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.activity-page button[type='submit']:hover {
+  background-color: #0056b3;
+}
+
+.activity-page table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.activity-page th,
+.activity-page td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.activity-page th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  text-align: left;
+}
+
+.activity-page button {
+  background-color: transparent;
+  color: #007bff;
+  border: none;
+  cursor: pointer;
+}
+
+.activity-page button:hover {
+  text-decoration: underline;
+}
+
+.activity-page .empty-message {
+  font-style: italic;
+  color: #999;
+}
